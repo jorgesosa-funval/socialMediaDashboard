@@ -1,0 +1,35 @@
+[
+    {
+      "icon": "/assets/icon-facebook.svg",
+      "userName": "@nathanf",
+      "title": "FOLLOWERS",
+      "amount": "1987",
+      "today": 12,
+      "clr": "clr_green"
+    },
+    {
+      "icon": "/assets/icon-twitter.svg",
+      "userName": "@nathanf",
+      "title": "FOLLOWERS",
+      "amount": "1044",
+      "today": 99,
+      "clr": "clr_green"
+    },
+    {
+      "icon": "/assets/icon-instagram.svg",
+      "userName": "@realnathanf",
+      "title": "FOLLOWERS",
+      "amount": "11K",
+      "today": 1099,
+      "clr": "clr_green"
+    },
+    {
+      "icon": "/assets/icon-youtube.svg",
+      "userName": "Nathan F.",
+      "title": "SUBSCRIBERS",
+      "amount": "8239",
+      "today": 144,
+      "clr": "clr_red"
+    }
+
+  ]
