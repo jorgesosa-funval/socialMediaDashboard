@@ -3,6 +3,8 @@ import './App.css'
 import facebook from '/assets/icon-facebook.svg'
 import up from '/assets/icon-up.svg'
 import DashboardCardContainer from './components/DashboardCardContainer'
+import OverviewCard from './components/OverviewCard'
+import OverviewCardContainer from './components/OverviewCardContainer'
 
 
 
@@ -90,149 +92,15 @@ function App() {
           <h1>Social Media Dashboard</h1>
           <h4>Total Followers:23,004</h4>
         </header>
+        
         <DashboardCardContainer
           data={data}
         />
 
         <h2>Overview - Today</h2>
-        <ul className='overview_container'>
-          <li className='overview_card'>
-
-            <div className='overview_head'>
-              <span>Page Views</span>
-              <img src={facebook} alt="facebook-icon" />
-            </div>
-
-            <div className='data'>
-              <span>87</span>
-
-              <div>
-                <img src={up} alt="" />
-                <span className='clr_green'>3%</span>
-              </div>
-
-            </div>
-          </li>
-          <li className='overview_card'>
-
-            <div className='overview_head'>
-              <span>Page Views</span>
-              <img src={facebook} alt="facebook-icon" />
-            </div>
-
-            <div className='data'>
-              <span>87</span>
-
-              <div>
-                <img src={up} alt="" />
-                <span className='clr_green'>3%</span>
-              </div>
-
-            </div>
-          </li>
-          <li className='overview_card'>
-
-            <div className='overview_head'>
-              <span>Page Views</span>
-              <img src={facebook} alt="facebook-icon" />
-            </div>
-
-            <div className='data'>
-              <span>87</span>
-
-              <div>
-                <img src={up} alt="" />
-                <span className='clr_green'>3%</span>
-              </div>
-
-            </div>
-          </li>
-          <li className='overview_card'>
-
-            <div className='overview_head'>
-              <span>Page Views</span>
-              <img src={facebook} alt="facebook-icon" />
-            </div>
-
-            <div className='data'>
-              <span>87</span>
-
-              <div>
-                <img src={up} alt="" />
-                <span className='clr_green'>3%</span>
-              </div>
-
-            </div>
-          </li>
-          <li className='overview_card'>
-
-            <div className='overview_head'>
-              <span>Page Views</span>
-              <img src={facebook} alt="facebook-icon" />
-            </div>
-
-            <div className='data'>
-              <span>87</span>
-
-              <div>
-                <img src={up} alt="" />
-                <span className='clr_green'>3%</span>
-              </div>
-
-            </div>
-          </li>
-          <li className='overview_card'>
-
-            <div className='overview_head'>
-              <span>Page Views</span>
-              <img src={facebook} alt="facebook-icon" />
-            </div>
-
-            <div className='data'>
-              <span>87</span>
-
-              <div>
-                <img src={up} alt="" />
-                <span className='clr_green'>3%</span>
-              </div>
-
-            </div>
-          </li>
-          <li className='overview_card'>
-
-            <div className='overview_head'>
-              <span>Page Views</span>
-              <img src={facebook} alt="facebook-icon" />
-            </div>
-
-            <div className='data'>
-              <span>87</span>
-
-              <div>
-                <img src={up} alt="" />
-                <span className='clr_green'>3%</span>
-              </div>
-
-            </div>
-          </li>
-          <li className='overview_card'>
-
-            <div className='overview_head'>
-              <span>Page Views</span>
-              <img src={facebook} alt="facebook-icon" />
-            </div>
-
-            <div className='data'>
-              <span>87</span>
-
-              <div>
-                <img src={up} alt="" />
-                <span className='clr_green'>3%</span>
-              </div>
-
-            </div>
-          </li>
-        </ul>
+         <OverviewCardContainer
+          data = {data2}
+         />
       </section>
     </>
   )
