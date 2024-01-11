@@ -68,18 +68,21 @@ function App() {
 
   ]
 
-  const [data, setData] = useState([]);
-
+  const [data, setData] = useState();
 
    async function getData() {
+
     const fetchData =   await fetch('data.json');
+
     const datajson =  await fetchData.json();
 
-    console.log(datajson);
+    setData(datajson)
   }
+
   useEffect(() => {
     getData();
-  })
+  },[])
+
   return (
     <>
       <section className='dashboard'>
@@ -87,9 +90,9 @@ function App() {
           <h1>Social Media Dashboard</h1>
           <h4>Total Followers:23,004</h4>
         </header>
-        {/* <DashboardCardContainer
+        <DashboardCardContainer
           data={data}
-        /> */}
+        />
 
         <h2>Overview - Today</h2>
         <ul className='overview_container'>
