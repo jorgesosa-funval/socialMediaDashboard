@@ -6,9 +6,10 @@ export default function OverviewCardContainer({data}) {
     return (
         <ul className='overview_container'>
 
-            {data && data.map(overview =>
+            {data && data.map((overview, i) =>
 
                 <OverviewCard
+                    key={i}
                     icon={overview.icon}
                     title={overview.title}
                     amount={overview.amount}

@@ -5,85 +5,34 @@ import up from '/assets/icon-up.svg'
 import DashboardCardContainer from './components/DashboardCardContainer'
 import OverviewCard from './components/OverviewCard'
 import OverviewCardContainer from './components/OverviewCardContainer'
+import Inputs from './components/inputs'
 
 
 
 function App() {
-  const data2 = [
-    {
-      "icon": "/assets/icon-facebook.svg",
-      "title": "Page Views",
-      "amount": "87",
-      "porcentage": 3,
-      "clr": "clr_green"
-    },
-    {
-      "icon": "/assets/icon-facebook.svg",
-      "title": "likes",
-      "amount": "52",
-      "porcentage": 2,
-      "clr": "clr_red"
-    },
-    {
-      "icon": "/assets/icon-instagram.svg",
-      "title": "Likes",
-      "amount": "5462",
-      "porcentage": 2257,
-      "clr": "clr_green"
-    },
-    {
-      "icon": "/assets/icon-instagram.svg",
-      "title": "Profile Views",
-      "amount": "52k",
-      "porcentage": 1375,
-      "clr": "clr_green"
-    },
-    ,
-    {
-      "icon": "/assets/icon-twitter.svg",
-      "title": "Retweets",
-      "amount": "117",
-      "porcentage": 303,
-      "clr": "clr_green"
-    },
-    {
-      "icon": "/assets/icon-twitter.svg",
-      "title": "likes",
-      "amount": "597",
-      "porcentage": 553,
-      "clr": "clr_green"
-    },
-    {
-      "icon": "/assets/icon-youtube.svg",
-      "title": "Likes",
-      "amount": "107",
-      "porcentage": 19,
-      "clr": "clr_red"
-    },
-    {
-      "icon": "/assets/icon-youtube.svg",
-      "title": "Total Views",
-      "amount": "1407",
-      "porcentage": 12,
-      "clr": "clr_red"
-    },
+  const [data, setData] = useState([]);
+  const [overviews, setOverviews] = useState([]);
+  const [porcentages, setPorcentages] = useState(0);
 
-  ]
+  async function getData() {
 
-  const [data, setData] = useState();
+    const fetchData = await fetch('data.json');
 
-   async function getData() {
-
-    const fetchData =   await fetch('data.json');
-
-    const datajson =  await fetchData.json();
+    const datajson = await fetchData.json();
 
     setData(datajson)
   }
 
+  const joseLuisMorales = async () => {
+    const fetchData = await fetch('overviews.json');
+    const jsonData = await fetchData.json();
+    setOverviews(jsonData);
+  }
+
   useEffect(() => {
     getData();
-  },[])
+    joseLuisMorales();
+  }, [])
 
   return (
     <>
@@ -92,15 +41,39 @@ function App() {
           <h1>Social Media Dashboard</h1>
           <h4>Total Followers:23,004</h4>
         </header>
-        
-        <DashboardCardContainer
+
+        {/* <DashboardCardContainer
           data={data}
         />
 
         <h2>Overview - Today</h2>
-         <OverviewCardContainer
-          data = {data2}
-         />
+        <OverviewCardContainer
+          data={overviews}
+        /> */}
+
+
+        <Inputs
+          valor={25}
+          clicked={(e)=>setPorcentages( porcentages + parseInt(e.target.value))}
+        />
+        <Inputs
+          valor={30}
+          clicked={(e)=>setPorcentages( porcentages + parseInt(e.target.value))}
+        />
+        <Inputs
+          valor={32}
+          clicked={(e)=>setPorcentages( porcentages + parseInt(e.target.value))}
+        />
+        <Inputs
+          valor={80}
+          clicked={(e)=>setPorcentages( porcentages + parseInt(e.target.value))}
+        />
+        <Inputs
+          valor={23}
+          clicked={(e)=>setPorcentages( porcentages + parseInt(e.target.value))}
+        />
+        <br/>
+        <input type="text" name="" id="" value={porcentages}/>
       </section>
     </>
   )
