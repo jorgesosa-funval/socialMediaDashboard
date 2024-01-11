@@ -1,9 +1,54 @@
 import { useState } from 'react'
 import './App.css'
 import facebook from './assets/icon-facebook.svg'
-import instagram from './assets/icon-instagram.svg'
 import up from './assets/icon-up.svg'
-import down from './assets/icon-down.svg'
+import DashboardCardContainer from './components/DashboardCardContainer'
+
+const data =
+  [
+    {
+      icon: '../../assets/icon-facebook.svg',
+      userName: '@nathanf',
+      title: 'FOLLOWERS',
+      amount: '1987',
+      today: 12,
+      clr: 'clr_green'
+    },
+    {
+      icon: '../../assets/icon-twitter.svg',
+      userName: '@nathanf',
+      title: 'FOLLOWERS',
+      amount: '1044`',
+      today: 99,
+      clr: 'clr_green'
+    },
+    {
+      icon: '../../assets/icon-instagram.svg',
+      userName: '@realnathanf',
+      title: 'FOLLOWERS',
+      amount: '11K`',
+      today: 1099,
+      clr: 'clr_green'
+    },
+    {
+      icon: '../../assets/icon-twitter.svg',
+      userName: '@nathanf',
+      title: 'FOLLOWERS',
+      amount: '1044`',
+      today: 99,
+      clr: 'clr_green'
+    },
+    {
+      icon: '../../assets/icon-youtube.svg',
+      userName: 'Nathan F.',
+      title: 'SUBSCRIBERS',
+      amount: '8239`',
+      today: 144,
+      clr: 'clr_red'
+    },
+
+  ]
+
 function App() {
 
   return (
@@ -13,65 +58,8 @@ function App() {
           <h1>Social Media Dashboard</h1>
           <h4>Total Followers:23,004</h4>
         </header>
-        <ul className='dashboard_card_container'>
-          <li className='dashboard_card'>
-            <div className='username'>
-              <img src={facebook} alt="facebook-icon" />
-              <span>@jorgeSosa</span>
-            </div>
-            <div className='followers'>
-              <h3>1987</h3>
-              <h5>Followers</h5>
-            </div>
-            <div className='card_footer'>
-              <img src={up} alt="Up-icon" />
-              <span className='clr_green'>12 Today</span>
-            </div>
-          </li>
-          <li className='dashboard_card'>
-            <div className='username'>
-              <img src={instagram} alt="facebook-icon" />
-              <span>@jorgeSosa</span>
-            </div>
-            <div className='followers'>
-              <h3>1987</h3>
-              <h5>Followers</h5>
-            </div>
-            <div className='card_footer'>
-              <img src={up} alt="Up-icon" />
-              <span className='clr_green'>12 Today</span>
-            </div>
-          </li>
-          <li className='dashboard_card'>
-            <div className='username'>
-              <img src={facebook} alt="facebook-icon" />
-              <span>@jorgeSosa</span>
-            </div>
-            <div className='followers'>
-              <h3>1987</h3>
-              <h5>Followers</h5>
-            </div>
-            <div className='card_footer'>
-              <img src={up} alt="Up-icon" />
-              <span className='clr_green'>12 Today</span>
-            </div>
-          </li>
-          <li className='dashboard_card'>
-            <div className='username'>
-              <img src={facebook} alt="facebook-icon" />
-              <span>@jorgeSosa</span>
-            </div>
-            <div className='followers'>
-              <h3>1987</h3>
-              <h5>Followers</h5>
-            </div>
-            <div className='card_footer'>
-              <img src={up} alt="Up-icon" />
-              <span className='clr_green'>12 Today</span>
-            </div>
-          </li>
+        <DashboardCardContainer />
 
-        </ul>
         <h2>Overview - Today</h2>
         <ul className='overview_container'>
           <li className='overview_card'>
